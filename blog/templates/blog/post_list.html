@@ -6,17 +6,12 @@
             <div>
                 <h1><a href="">Маня учится</a></h1>
             </div>
-
-            <div>
-                <p>published: 19.01.2017, 00:35</p>
-                <h2><a href="">Урок 1</a></h2>
-                <p>HTML - муть</p>
-            </div>
-
-            <div>
-                <p>published: 20.01.2017, 12:14</p>
-                <h2><a href="">Урок 2</a></h2>
-                <p>Крыша едет</p>
-            </div>
+        {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
         </body>
     </html>
